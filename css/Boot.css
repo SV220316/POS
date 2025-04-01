@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Square';
+    src: url('Square.ttf') format('truetype');
+}
+.boot_screen .center{margin-left: auto;margin-right: auto;}
+.boot_screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background: linear-gradient(180deg, #111, black);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+.boot_screen img{
+    width: 24vh;
+    height: 24vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.boot_screen h1{
+    text-align: center;
+    color: midnightblue;
+    font-family: Square;
+    font-size: 50px;
+    margin-top: 1vh;
+}
+.boot_screen h3{
+    text-align: center;
+    color: #d4d4d4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    margin-top: -2vh;
+}
+.boot_screen h4{
+    text-align: center;
+    color: #5978ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    margin-top: -2vh;
+}

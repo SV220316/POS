@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>BusinessOS</title>
+
+    <script src="Logic.js" defer></script>
+
+    <link rel="stylesheet" href="css/Animations.css">
+
+    <link rel="stylesheet" href="css/Boot.css">
+
+    <link rel="stylesheet" href="css/UI.css">
+    <link rel="stylesheet" href="css/Pos_UI.css">
+    <link rel="stylesheet" href="css/YunaUI.css">
+
+    <link rel="stylesheet" href="css/Apps.css">
+    <link rel="stylesheet" href="css/widgets.css">
+    
+</head>
+<body onload="Core()">
+
+    <div class="boot_screen" id="BSI">
+        <div class="center">
+            <img src="Home_img/Logo.png" />
+        <h1> QUANTUM CAR </h1>
+        <h3> CatalystOS: The Next-Gen Car OS, Powered by Yuna AI </h3>
+        <h4> Developed by Derek Ronquillo </h4>
+        </div>
+        
+    </div><!----- BOOT SCREEN ----->
+
+    <div class="Home_Screen">
+        <!----- LEFT CONTAINER ----->
+    <div class="cont_left" id="LC">
+        <audio id="audio" autoplay controls style="display:none;"></audio>
+        <div class="nnn">
+            <a href="" class="fa fa-refresh"></a>
+            Quantum CarOS
+            <a style="color:#ffc353;" class="fa-solid fa-car-battery"></a>
+            <a style="color:#ffc353;" class="fa-solid fa-circle-exclamation"></a>
+            <a style="color:#58ff58;" class="fa-solid fa-temperature-low"></a>
+        </div>
+        <div class="Medium_widget" style="height: 12vh; display: flex; text-align: center;flex-direction: column;list-style: none; border: 0;">
+            <h2 id="time" style="font-family:Arial,Helvetica,sans-serif;font-weight:bolder;font-size:7.5vh;margin-top:-0.75vh;color: rgb(255, 248, 239);"> 04:16 </h2>
+            <h3 id="date" style="font-family:Arial,Helvetica,sans-serif;font-weight:lighter;font-size:2.5vh;margin-top:-5.5vh;color: rgb(255, 248, 239);"> Monday, June 5 </h3>
+        </div><!----- CLOCK ----->
+
+        <div class="Medium_widget">
+        </div><!----- WEATHER ----->
+
+        <div class="Medium_widget MW_Music" style="background: rgba(40, 40, 40, 0.75);">
+            <img src="Home_img/artwork.jpg" id="music_thumb">
+            <h3> No song playing </h3>
+            <p>0:00</p>
+            <div class="controls">
+                <input type="range" id="duration" value="0">
+                <a href="#" onclick="none()" class="fa fa-backward"></a>
+                <a href="#" onclick="none()" class="fa fa-play"></a>
+                <a href="#" onclick="none()" class="fa fa-forward"></a>
+            </div>   
+        </div><!----- MUSIC ----->
+        
+        <div class="Large_widget LW_Photos">
+            <img src="Home_img/ulzzang2.jpg" id="LW_Photos_img">
+            <h3>Featured image</h3>
+        </div><!----- PHOTOS ----->
+    </div>
+
+    <!----- RIGHT CONTAINER ----->
+    <div class="cont_right">
+        <div class="App_Container Music_App_Container_Main" id="Music_Window">
+            <div class="Control_Bar" style="background: rgba(0, 0, 0, 0.75);">
+                <a href="#" onclick="App_Control('O_Music')" class="fa fa-close"></a>
+                <p> Music </p>
+            </div>
+            <div class="content">
+                <div class="Sidebar library-nav">
+                    <p>Libraries:</p>
+                    <a href="#" onclick="filterLibrary('ALS')"> All Songs </a>
+                    <a href="#" onclick="filterLibrary('recently-added')"> Recently Added </a>
+                    <a href="#" onclick="filterLibrary('oldies-rock')"> Oldies Rock </a>
+                    <a href="#" onclick="filterLibrary('jazz')"> Jazz </a>
+                    <a href="#" onclick="filterLibrary('instrumentals')"> Instrumentals </a>
+                    <a href="#" onclick="filterLibrary('pop-city')"> Pop & City </a>
+                    <a href="#" onclick="filterLibrary('iu')"> IU </a>
+                    <a href="#" onclick="filterLibrary('gfriend')"> GFRIEND </a>
+                    <a href="#" onclick="filterLibrary('korean-ost')"> Korean OST </a>
+                </div>
+                <div class="library" id="library">
+                    <div class="album ALS recently-added"><img src="album1.jpg" alt="Album 1"></div>
+                    <div class="album ALS oldies-rock"><img src="album2.jpg" alt="Album 2"></div>
+                    <div class="album ALS jazz"><img src="album3.jpg" alt="Album 3"></div>
+                    <div class="album ALS instrumentals"><img src="album4.jpg" alt="Album 4"></div>
+                    <div class="album ALS pop-city"><img src="album5.jpg" alt="Album 5"></div>
+                    <div class="album ALS iu"><img src="album6.jpg" alt="IU Album"></div>
+                    <div class="album ALS gfriend"><img src="album7.jpg" alt="GFRIEND Album"></div>
+                    <div class="album ALS korean-ost"><img src="album8.jpg" alt="Korean OST Album"></div>
+                    <div class="album ALS recently-added"><img src="album1.jpg" alt="Album 1"></div>
+                    <div class="album ALS oldies-rock"><img src="album2.jpg" alt="Album 2"></div>
+                    <div class="album ALS jazz"><img src="album3.jpg" alt="Album 3"></div>
+                    <div class="album ALS instrumentals"><img src="album4.jpg" alt="Album 4"></div>
+                    <div class="album ALS pop-city"><img src="album5.jpg" alt="Album 5"></div>
+                    <div class="album ALS iu"><img src="album6.jpg" alt="IU Album"></div>
+                    <div class="album ALS gfriend"><img src="album7.jpg" alt="GFRIEND Album"></div>
+                    <div class="album ALS korean-ost"><img src="album8.jpg" alt="Korean OST Album"></div>
+                    <div class="album ALS recently-added"><img src="album1.jpg" alt="Album 1"></div>
+                    <div class="album ALS oldies-rock"><img src="album2.jpg" alt="Album 2"></div>
+                    <div class="album ALS jazz"><img src="album3.jpg" alt="Album 3"></div>
+                    <div class="album ALS instrumentals"><img src="album4.jpg" alt="Album 4"></div>
+                    <div class="album ALS pop-city"><img src="album5.jpg" alt="Album 5"></div>
+                    <div class="album ALS iu"><img src="album6.jpg" alt="IU Album"></div>
+                    <div class="album ALS gfriend"><img src="album7.jpg" alt="GFRIEND Album"></div>
+                    <div class="album ALS korean-ost"><img src="album8.jpg" alt="Korean OST Album"></div>
+                </div>
+            </div>
+                
+        </div>
+        <div class="App_Container Browser_Container_Main" id="Browser_Window">
+            <div class="Control_Bar" style="background: rgba(0, 0, 0, 0.75);">
+                <a href="#" onclick="App_Control('O_Browser')" class="fa fa-close"></a>
+                <p> Browser </p>
+            </div>
+                <div class="content">
+                    <iframe id="BWMS_frame" frameborder="0"></iframe>
+                </div>
+        </div>
+        <!--<div class="App_Container Settings_Container_Main"></div>-->
+    </div>
+
+
+    <!----- Yuna AI Container GOOD!! ----->
+    <div class="Yuna_container" id="YNC">
+        <div id="conversation">
+            <div style="margin-top: 5px;"></div>
+        </div>
+        <div class="controller">
+            <input type="text" id="YNC_input" placeholder="How can I help you today?">
+            <a href="#" id="YNC_btn" class="fa fa-microphone" onclick="YNC_VoiceON()"></a>
+            <a href="#" id="YNC_btn" class="fa fa-send" onclick="YNC_Send()"></a>
+        </div>
+    </div>
+
+
+    <!----- DOCK ----->
+    <div class="app_dock" id="app_dock">
+        <a href="#" onclick="App_Control('I_Music')"><img src="Home_img/Music.png" id="app_icon" /></a>
+        <a href="maps:"><img src="Home_img/Maps.png" id="app_icon" /></a>
+        <a href="#" onclick="App_Control('I_Browser')"><img src="Home_img/Browser.png" id="app_icon" /></a>
+        <a href="#" onclick="App_Control('I_POS')"><img src="Home_img/POS.jpg" style="overflow: hidden; border-radius: 1.25vh; width: 7vh; height: 7vh;" id="app_icon" /></a>
+        <a href="http://"><img src="Home_img/Settings.png" id="app_icon" /></a>
+    </div>
+
+
+    <!----- MISC ----->
+    <div class="Activation_bar" id="Activation_bar">
+        <a href="#" onclick="Yuna_CTRL('off')" class="fa fa-close" style="display: none;" id="Btn"></a>
+        <h3 onclick="Yuna_CTRL('on')">Yuna AI</h3>
+    </div>
+    </div>
+    
+    <div class="POS_Screen" id="Pos">
+        <div class="nav">
+            <h1 style="margin-left: 2vh;">Qunatum POS</h1>
+            <a onclick="App_Control('O_POS')" class="fa fa-home" href="#" style="margin-right: 26vh;"></a>
+            <a onclick="c()" class="fa fa-bars" href="#" style="margin-right: 14vh;"></a>
+            <a onclick="POS_Yuna('on')" class="fab fa-first-order-alt" href="#" style="font-size: 6vh; background: linear-gradient(30deg, #ffa0a0, #8ea3ff);"></a>
+        </div>
+    
+        <div class="left">
+            <div class="dock">
+                <a class="category" data-category="Sodas" href="#" class="active"> Sodas </a>
+                <a class="category" data-category="MilkTea" href="#"> MilkTea </a>
+                <a class="category" data-category="Fries" href="#"> Fries </a>
+                <a class="category" data-category="Burgers" href="#"> Burgers </a>
+                <a class="category" data-category="RiceMeals" href="#"> Rice Meals </a>
+                <a class="category" data-category="Coffee" href="#"> Coffee </a>
+            </div>
+    
+            <div class="grided" id="itemsGrid">
+                <!----- FRUIT SODA ITEMS ----->
+                <a href="#" >
+                    <div id="items" data-category="Sodas">
+                        <img src="POS_img/Soda.png" />
+                        <h4> 12oz Flavored Fruit Soda </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="Sodas">
+                        <img src="POS_img/Soda.png" />
+                        <h4> 16oz Flavored Fruit Soda </h4>
+                    </div>
+                </a>
+                <a href="#">
+                    <div id="items" data-category="Sodas">
+                        <img src="POS_img/Gear.png" />
+                        <h4> Fruit Jelly (Add-Ons) </h4>
+                    </div>
+                </a>
+                <!----- MILK TEA ----->
+                <a href="#" >
+                    <div id="items" data-category="MilkTea">
+                        <img src="POS_img/MilkTea.png" />
+                        <h4> 12oz Generic MilkTea </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="MilkTea">
+                        <img src="POS_img/MilkTea.png" />
+                        <h4> 16oz Generic MilkTea </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="MilkTea">
+                        <img src="POS_img/Gear.png" />
+                        <h4> Blackpearl (Add-Ons) </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="MilkTea">
+                        <img src="POS_img/Lemonade.png" />
+                        <h4> 12oz Lemonade </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="MilkTea">
+                        <img src="POS_img/Lemonade.png" />
+                        <h4> 16oz Lemonade </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="MilkTea">
+                        <img src="POS_img/Gear.png" />
+                        <h4> Nata Jelly (Add-Ons) </h4>
+                    </div>
+                </a>
+                <!----- BURGER ----->
+                <a href="#" >
+                    <div id="items" data-category="Burgers">
+                        <img src="POS_img/Burgers.png" />
+                        <h4> Buy 1 Take 1 Cheeze </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="Burgers">
+                        <img src="POS_img/Burgers.png" />
+                        <h4> Buy 1 Take 1 Plain </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="Burgers">
+                        <img src="POS_img/Sets.png" />
+                        <h4> Set A(Cheeze, Soda 12) </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="Burgers">
+                        <img src="POS_img/Sets.png" />
+                        <h4> Set B(Cheeze, Soda 16) </h4>
+                    </div>
+                </a>
+                <a href="#" style="opacity: 0;"><!--HIDDEN-->
+                    <div id="items" data-category="Burgers">
+                        <img src="POS_img/Sets.png" />
+                        <h4> Set A(Cheeze, Soda 16) </h4>
+                    </div>
+                </a>
+                <a href="#" style="opacity: 0;"><!--HIDDEN-->
+                    <div id="items" data-category="Burgers">
+                        <img src="POS_img/Sets.png" />
+                        <h4> Set A(Cheeze, Soda 16) </h4>
+                    </div>
+                </a>
+                <!----- FRIES ----->
+                <a href="#" ><!--Plain-->
+                    <div id="items" data-category="Fries">
+                        <img src="POS_img/Plain.png" />
+                        <h4> Plain Small Fries </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="Fries">
+                        <img src="POS_img/Plain.png" />
+                        <h4> Plain Large Fries </h4>
+                    </div>
+                </a>
+                <a href="#" ><!--Cheeze-->
+                    <div id="items" data-category="Fries">
+                        <img src="POS_img/Cheeze.png" />
+                        <h4> Cheeze Small Fries </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="Fries">
+                        <img src="POS_img/Cheeze.png" />
+                        <h4> Cheeze Large Fries </h4>
+                    </div>
+                </a>
+                <a href="#" ><!--SC-->
+                    <div id="items" data-category="Fries">
+                        <img src="POS_img/SourCream.png" />
+                        <h4> SourCream Small Fries </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="Fries">
+                        <img src="POS_img/SourCream.png" />
+                        <h4> SourCream Large Fries </h4>
+                    </div>
+                </a>
+                <a href="#" ><!--BBQ-->
+                    <div id="items" data-category="Fries">
+                        <img src="POS_img/BBQ.png" />
+                        <h4> BBQ Small Fries </h4>
+                    </div>
+                </a>
+                <a href="#" >
+                    <div id="items" data-category="Fries">
+                        <img src="POS_img/BBQ.png" />
+                        <h4> BBQ Large Fries </h4>
+                    </div>
+                </a>    
+            </div>
+            
+        </div>
+    
+        <div class="right">
+            <div class="list">
+                <!--<div id="order">    THIS IS HOW
+                    <a href="#">X</a>
+                    <h3> cheeze burger </h3>
+                    <h4 id="cost"> 20.00 </h4>
+                </div>-->
+            </div>
+            <div class="controls">
+                <h3 id="total_profit">Total: 0</h3>
+                <h3 style="float: right; margin-top: -6vh; font-size: 1.75vh;margin-right: 2vh;" id="stored_profit">Profit: 0</h3>
+                <a href="#" onclick="ctrl_handler('erase')"> Clear </a>
+                <a href="#" onclick="ctrl_handler('store')" style="margin-left:calc(50% + 1vh); margin-right:1vh;margin-top: -7.5vh;float: right; background: linear-gradient(30deg, #ffa0a0, #8ea3ff);"> Confirm </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

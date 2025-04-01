@@ -1,0 +1,28 @@
+@keyframes show_dock {
+    from{bottom: -12vh;}
+    to{bottom: 0.75vh;}
+}
+@keyframes hide_dock {
+    from{bottom: 0.75vh;}
+    to{bottom: -12vh;}
+}
+@keyframes show_ACB {
+    from{top: -8vh;}
+    to{top: 0vh;}
+}
+@keyframes show_LC {
+    from{margin-left: -47vh;}
+    to{margin-left: 0vh;}
+}
+@keyframes fadeIN {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes SHOW_YNC {
+    from{visibility: hidden; height: 0vh; opacity: 0;}
+    to{visibility: visible; height: 30vh; opacity: 1;}
+}
+@keyframes HIDE_YNC {            
+    from{visibility: visible; height: 30vh; opacity: 1;}
+    to{visibility: hidden; height: 0vh; opacity: 0;}
+}
